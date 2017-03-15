@@ -10,17 +10,11 @@ import android.graphics.Color;
 import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Rect;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
-import android.support.annotation.ColorInt;
-import android.support.v4.graphics.ColorUtils;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.Transformation;
 import android.widget.ImageView;
@@ -33,7 +27,7 @@ import java.util.List;
 /**
  * author: Trimph
  * data: 2017/3/3.
- * description: 原文：https://github.com/JustinFincher/JZMultiChoicesCircleButton
+ * description: 参考原文：https://github.com/JustinFincher/JZMultiChoicesCircleButton
  */
 
 public class CircleChioseView extends View {
@@ -58,7 +52,7 @@ public class CircleChioseView extends View {
     private int expand = 3; //展开状态
     private int expanding = 4; //展开完成
     public List<ChioseMode> chioseModeList = new ArrayList<>();
-    private ImageView[] menus = new ImageView[]{};
+    private ImageView[] menus = new ImageView[5];
     private Context context;
     private Paint menuPaint;
     private int[] colors = new int[]{
@@ -105,7 +99,7 @@ public class CircleChioseView extends View {
         for (int i = 0; i < chioseModeList.size(); i++) {
             imageView = new ImageView(context);
             imageView.setBackgroundResource(chioseModeList.get(i).getRes());
-            menus[i] = imageView;
+//            menus[i] = imageView;
         }
     }
 
@@ -155,12 +149,11 @@ public class CircleChioseView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-
         if (isParallaxEffect && (CIRCLR_STATE == expand)) {
-            canvas.concat(cMatrix);
+            canvas.concat(cMatrix);  //canvas与matrix相关连
         }
-
         canvas.translate(mWidth / 2, mHeight / 2);
+
         //先画一个圆扩散
         drawCircle(canvas);
 
@@ -187,9 +180,6 @@ public class CircleChioseView extends View {
                     if (centerRect.contains((int) downX, (int) downY)) {
                         startCollpandAnimaor();
                     }
-                } else {
-                    //展开中不做处理
-//                    calculateRotate(downX, downY);
                 }
                 return true;
             case MotionEvent.ACTION_MOVE:
@@ -229,9 +219,6 @@ public class CircleChioseView extends View {
 
     /**
      * 计算旋转角度
-     *
-     * @param pointX
-     * @param pointY
      */
     public void calculateRotate(float pointX, float pointY) {
 
@@ -244,36 +231,45 @@ public class CircleChioseView extends View {
 
         Log.e("TouchEvent: DOWN ", "size:" + size);
 
-        float rotateX = offsetY / size * 45;
-        float rotateY = -offsetX / size * 45;
+        float rotateX = offsetY / size * 45;    //45 表示最大旋转度数
+        float rotateY = -offsetX / size * 45;  //若是往同一个方向旋转不会有视图差效果
 
         Log.e("TouchEvent: DOWN ", "rotateX:" + rotateX + " rotateY:" + rotateY);
 
         camera.save();
-        camera.rotateX(rotateX);
-        camera.rotateY(rotateY);
+        camera.rotateX(rotateX);  //
+        camera.rotateY(rotateY);  //旋转
         camera.getMatrix(cMatrix);
         camera.restore();
 
-        cMatrix.preTranslate(-centerX, -centerY);
-        cMatrix.postTranslate(centerX, centerY);
+        //必须是视图中心位置
+        cMatrix.preTranslate(-centerX, -centerY);  //左移
+        cMatrix.postTranslate(centerX, centerY);   //这是一对不然 图形会偏移到左上角 相机的位置  不懂这里为什么这样写
 
     }
 
     private void drawCenter(Canvas canvas) {
+        canvas.save();
+        canvas.translate(currentProgress * 2f, currentProgress * 2f);
         matrix.setTranslate(-bWidth / 2, -bHeight / 2);
-//        matrix.setScale(0.6f, 0.6f);
         canvas.drawBitmap(bitmap, matrix, paint);
+        canvas.restore();
     }
 
     public float currentRadius;
 
+    /**
+     *
+     */
     private void drawCircle(Canvas canvas) {
+        canvas.save();
+        canvas.translate(currentProgress * 2f, currentProgress * 2f);
         centerRect.set((int) (mWidth / 2 - radius), (int) (mHeight / 2 - radius),
                 (int) (mWidth / 2 + radius), (int) (mHeight / 2 + radius));
         currentRadius = (maxRadius - radius) * currentProgress + radius;
         canvas.drawCircle(0, 0, currentRadius, paint);
 //        canvas.drawPoint((mWidth / 2 - radius), (mHeight / 2 - radius), paint);
+        canvas.restore();
     }
 
 
@@ -346,14 +342,27 @@ public class CircleChioseView extends View {
     }
 
     public int number;
+    public Bitmap menuBitmap;
+    public int menuHeight, menuWidth;
 
     /**
      * 绘制菜单项
-     *
-     * @param canvas
      */
     private void drawItems(Canvas canvas) {
+
+        canvas.save();
+        canvas.translate(currentProgress * 2f, currentProgress * 2f);  //旋转画布形成远小进大的效果。
+
         int size = chioseModeList.size();
+
+        if (bitmap == null) {
+            Log.e("Item", "---------");
+            return;
+        }
+
+//        menuBitmap = scaleBitmap(bitmap, 0.6f);
+//        menuHeight = menuBitmap.getHeight();
+//        menuWidth = menuBitmap.getWidth();
         if (size <= 1) {
             return;
         }
@@ -366,7 +375,7 @@ public class CircleChioseView extends View {
             menuPaint.setColor(colors[i]);
             if (Math.abs(pointX) > bWidth || Math.abs(pointY) > bWidth) {
                 if (currentProgress >= 0.4) {
-                    mMx.preScale(0.6f * currentProgress, 0.6f * currentProgress);
+//                    mMx.preScale(0.6f * currentProgress, 0.6f * currentProgress);
                     mMx.setTranslate(pointX * currentProgress - bWidth / 2, pointY * currentProgress - bHeight / 2);
 //                    mMx.postScale(0.8f*currentProgress,0.8f*currentProgress);
                     canvas.drawCircle(pointX * currentProgress, pointY * currentProgress, radius * currentProgress - 10, menuPaint);
@@ -374,7 +383,32 @@ public class CircleChioseView extends View {
                 }
             }
         }
+        canvas.restore();
     }
+
+    /**
+     * 按比例缩放图片
+     *
+     * @param origin 原图
+     * @param ratio  比例
+     * @return 新的bitmap
+     */
+    private Bitmap scaleBitmap(Bitmap origin, float ratio) {
+        if (origin == null) {
+            return null;
+        }
+        int width = origin.getWidth();
+        int height = origin.getHeight();
+        Matrix matrix = new Matrix();
+        matrix.preScale(ratio, ratio);
+        Bitmap newBM = Bitmap.createBitmap(origin, 0, 0, width, height, matrix, false);
+        if (newBM.equals(origin)) {
+            return newBM;
+        }
+        origin.recycle();
+        return newBM;
+    }
+
 
     public Matrix mMx;
 
