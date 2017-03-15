@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="colorWhite">#FFF</color>
+    <color name="setting_bg_color">#EAEAEA</color>
+    <color name="setting_text_color">#BABABA</color>
+    <color name="setting_tv_bg_color">#ffBABABA</color>
+    <color name="setting_tv_bg_color2">#EFEFEF</color>
+    <color name="colorBlue">#43b2ff</color>
+    <color name="colorButtom">#3a3a3a</color>
+    <color name="front_camera_config_btu">#43b2ff</color>
+    <color name="front_camera_config_btu_press">#1d8bd8</color>
+    <color name="text_color_while">#FFFFFF</color>
+    <color name="color4gMenuPress">#ff43b2ff</color>
+    <color name="colorBlack">#000</color>
+    <color name="finger">#FFF</color>
+    <color name="finger_press">#43b2ff</color>
+    <color name="hy_color">#D4BC9F</color>
+    <color name="hy_dialog_bg">#7b181715</color>
+    <color name="circle_1">#ffF9BAE9</color>
+    <color name="circle_2">#ff5BF998</color>
+    <color name="circle_3">#ffCCE3F9</color>
+    <color name="circle_4">#ffBB2EF9</color>
+    <color name="circle_5">#ff7AA5F9</color>
+</resources>
