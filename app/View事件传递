@@ -1,0 +1,72 @@
+#事件传递
+
+
+
+03-29 16:04:41.563 27094-27094/com.warm.everytriumph E/activity CusRelative: dispatchTouchEvent
+03-29 16:04:41.564 27094-27094/com.warm.everytriumph E/activity CusRelative: dispatch ACTION_DOWN
+03-29 16:04:41.564 27094-27094/com.warm.everytriumph E/activity CusRelative: onInterceptTouchEvent
+03-29 16:04:41.564 27094-27094/com.warm.everytriumph E/activity CusRelative2: dispatchTouchEvent
+03-29 16:04:41.564 27094-27094/com.warm.everytriumph E/activity CusRelative2: dispatch ACTION_DOWN
+03-29 16:04:41.564 27094-27094/com.warm.everytriumph E/activity CusRelative2: onInterceptTouchEvent
+03-29 16:04:41.564 27094-27094/com.warm.everytriumph E/activity CusTextView: dispatchTouchEvent
+03-29 16:04:41.564 27094-27094/com.warm.everytriumph E/activity CusTextView:  dispatch ACTION_DOWN
+03-29 16:04:41.565 27094-27094/com.warm.everytriumph E/activity CusTextView: onTouchEvent
+03-29 16:04:41.565 27094-27094/com.warm.everytriumph E/activity CusTextView:  onTouch ACTION_DOWN
+03-29 16:04:41.565 27094-27094/com.warm.everytriumph E/activity::: dispatchTouchEvent:true
+03-29 16:04:41.565 27094-27094/com.warm.everytriumph E/activity CusRelative: dispatchTouchEvent
+03-29 16:04:41.565 27094-27094/com.warm.everytriumph E/activity CusRelative: onInterceptTouchEvent
+03-29 16:04:41.565 27094-27094/com.warm.everytriumph E/activity CusRelative2: dispatchTouchEvent
+03-29 16:04:41.565 27094-27094/com.warm.everytriumph E/activity CusRelative2: onInterceptTouchEvent
+03-29 16:04:41.565 27094-27094/com.warm.everytriumph E/activity CusTextView: dispatchTouchEvent
+03-29 16:04:41.565 27094-27094/com.warm.everytriumph E/activity CusTextView: onTouchEvent
+03-29 16:04:41.566 27094-27094/com.warm.everytriumph E/activity CusRelative: dispatchTouchEvent
+03-29 16:04:41.566 27094-27094/com.warm.everytriumph E/activity CusRelative: dispatch ACTION_DOWN
+03-29 16:04:41.566 27094-27094/com.warm.everytriumph E/activity CusRelative: onInterceptTouchEvent
+03-29 16:04:41.566 27094-27094/com.warm.everytriumph E/activity CusRelative2: dispatchTouchEvent
+03-29 16:04:41.566 27094-27094/com.warm.everytriumph E/activity CusRelative2: dispatch ACTION_DOWN
+03-29 16:04:41.566 27094-27094/com.warm.everytriumph E/activity CusRelative2: onInterceptTouchEvent
+03-29 16:04:41.566 27094-27094/com.warm.everytriumph E/activity CusTextView: dispatchTouchEvent
+03-29 16:04:41.566 27094-27094/com.warm.everytriumph E/activity CusTextView:  dispatch ACTION_DOWN
+03-29 16:04:41.566 27094-27094/com.warm.everytriumph E/activity CusTextView: onTouchEvent
+03-29 16:04:41.566 27094-27094/com.warm.everytriumph E/activity CusTextView:  onTouch ACTION_DOWN
+03-29 16:04:41.584 27094-27094/com.warm.everytriumph E/activity CusRelative: dispatchTouchEvent
+03-29 16:04:41.584 27094-27094/com.warm.everytriumph E/activity CusRelative: dispatch ACTION_MOVE
+03-29 16:04:41.584 27094-27094/com.warm.everytriumph E/activity CusRelative: onInterceptTouchEvent
+03-29 16:04:41.584 27094-27094/com.warm.everytriumph E/activity CusRelative2: dispatchTouchEvent
+03-29 16:04:41.584 27094-27094/com.warm.everytriumph E/activity CusRelative2: dispatch ACTION_MOVE
+03-29 16:04:41.584 27094-27094/com.warm.everytriumph E/activity CusRelative2: onInterceptTouchEvent
+03-29 16:04:41.584 27094-27094/com.warm.everytriumph E/activity CusTextView: dispatchTouchEvent
+03-29 16:04:41.584 27094-27094/com.warm.everytriumph E/activity CusTextView: dispatch ACTION_MOVE
+03-29 16:04:41.584 27094-27094/com.warm.everytriumph E/activity CusTextView: onTouchEvent
+03-29 16:04:41.584 27094-27094/com.warm.everytriumph E/activity CusTextView: onTouch ACTION_MOVE
+03-29 16:04:41.586 27094-27094/com.warm.everytriumph E/activity::: dispatchTouchEvent:true
+03-29 16:04:41.586 27094-27094/com.warm.everytriumph E/activity CusRelative: dispatchTouchEvent
+03-29 16:04:41.586 27094-27094/com.warm.everytriumph E/activity CusRelative: dispatch ACTION_MOVE
+03-29 16:04:41.586 27094-27094/com.warm.everytriumph E/activity CusRelative: onInterceptTouchEvent
+03-29 16:04:41.586 27094-27094/com.warm.everytriumph E/activity CusRelative2: dispatchTouchEvent
+03-29 16:04:41.586 27094-27094/com.warm.everytriumph E/activity CusRelative2: dispatch ACTION_MOVE
+03-29 16:04:41.586 27094-27094/com.warm.everytriumph E/activity CusRelative2: onInterceptTouchEvent
+03-29 16:04:41.586 27094-27094/com.warm.everytriumph E/activity CusTextView: dispatchTouchEvent
+03-29 16:04:41.586 27094-27094/com.warm.everytriumph E/activity CusTextView: dispatch ACTION_MOVE
+03-29 16:04:41.586 27094-27094/com.warm.everytriumph E/activity CusTextView: onTouchEvent
+03-29 16:04:41.586 27094-27094/com.warm.everytriumph E/activity CusTextView: onTouch ACTION_MOVE
+03-29 16:04:41.642 27094-27094/com.warm.everytriumph E/activity CusRelative: dispatchTouchEvent
+03-29 16:04:41.642 27094-27094/com.warm.everytriumph E/activity CusRelative: dispatch ACTION_UP
+03-29 16:04:41.642 27094-27094/com.warm.everytriumph E/activity CusRelative: onInterceptTouchEvent
+03-29 16:04:41.642 27094-27094/com.warm.everytriumph E/activity CusRelative2: dispatchTouchEvent
+03-29 16:04:41.642 27094-27094/com.warm.everytriumph E/activity CusRelative2: dispatch ACTION_UP
+03-29 16:04:41.642 27094-27094/com.warm.everytriumph E/activity CusRelative2: onInterceptTouchEvent
+03-29 16:04:41.642 27094-27094/com.warm.everytriumph E/activity CusTextView: dispatchTouchEvent
+03-29 16:04:41.642 27094-27094/com.warm.everytriumph E/activity CusTextView: dispatch ACTION_UP
+03-29 16:04:41.642 27094-27094/com.warm.everytriumph E/activity CusTextView: onTouchEvent
+03-29 16:04:41.642 27094-27094/com.warm.everytriumph E/activity CusTextView: onTouch ACTION_UP
+03-29 16:04:41.642 27094-27094/com.warm.everytriumph E/activity::: dispatchTouchEvent:true
+03-29 16:04:41.643 27094-27094/com.warm.everytriumph E/activity::: onTouchEvent:false
+
+
+UNSPECIFIED
+不限定，父View不限制子View的具体的大小，所以子View可以按自己需求设置宽高（前面说的ScrollView就给子View设置了这个模式，ListView就会自己确认自己高度）。
+EXACTLY
+父View决定子View的确切大小，子View被限定在给定的边界里，忽略本身想要的大小。
+AT_MOST
+最多的，子View最大可以达到的指定大小（当设置为wrap_content时，模式为AT_MOST, 表示子view的大小最多是多少。）

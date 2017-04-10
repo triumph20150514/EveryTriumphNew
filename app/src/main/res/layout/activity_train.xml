@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.warm.everytriumph.view.CusRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.warm.everytriumph.view.CusRelativeLayout2
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:background="@color/circle_1">
+
+        <com.warm.everytriumph.view.CusTextView
+            android:id="@+id/tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/circle_3"
+            android:padding="20dp"
+            android:text="@string/app_name"
+            android:textSize="18sp" />
+
+    </com.warm.everytriumph.view.CusRelativeLayout2>
+
+    <ScrollView
+        android:id="@+id/scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <com.warm.everytriumph.view.CusListView
+            android:id="@+id/listview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </ScrollView>
+
+</com.warm.everytriumph.view.CusRelativeLayout>

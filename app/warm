@@ -1,0 +1,28 @@
+ #伪3D主要实现代码
+  Camera通过使用旋转它来实现伪3D效果
+  遵循左手准则 屏幕左上角Camera位置，
+  通过Camera.getMatrix(); 操作Matrix
+  //下面就是对于矩阵的基本算法运用，我也不了解哎！
+ --        camera.save();
+           camera.rotateX(rotateX);  //
+           camera.rotateY(rotateY);  //旋转
+           camera.getMatrix(cMatrix);
+           camera.restore();
+   
+--           //必须是视图中心位置
+           cMatrix.preTranslate(-centerX, -centerY);  //左移
+           cMatrix.postTranslate(centerX, centerY);   //这是一对不然 图形会偏移到左上角 相机的位置  不懂这里为什么这样写
+           
+ 
+ **             int size = Math.max(mWidth, mHeight);  //
+                   float offsetX = (centerX - pointX);  //计算触摸点距离绘制图形中心的的偏移量
+                   float offsetY = (centerY - pointY);
+                   Log.e("TouchEvent: DOWN ", "offsetX:" + offsetX + " offsetY:" + offsetY);
+                   Log.e("TouchEvent: DOWN ", "size:" + size);
+                   float rotateX =  **offsetY** / size * 45;    //45 表示最大旋转度数     //通过偏移量占比  计算出Camera旋转大小
+                   float rotateY = **-offsetX** / size * 45;  //若是往同一个方向旋转不会有视图差效果  
+                   
+ */*      ondraw()中使用
+           canvas.concat(cMatrix);  //把canvas与matrix相关连
+  ** 实现伪3D效果上面的就是主要代码。                 
+                    

@@ -26,7 +26,7 @@ import java.util.List;
 
 /**
  * author: Trimph
- * data: 2017/3/3.
+ * data: 2017/3/3.  伪3D效果
  * description: 参考原文：https://github.com/JustinFincher/JZMultiChoicesCircleButton
  */
 
@@ -221,21 +221,14 @@ public class CircleChioseView extends View {
      * 计算旋转角度
      */
     public void calculateRotate(float pointX, float pointY) {
-
         int size = Math.max(mWidth, mHeight);
-
         float offsetX = (centerX - pointX);
         float offsetY = (centerY - pointY);
-
         Log.e("TouchEvent: DOWN ", "offsetX:" + offsetX + " offsetY:" + offsetY);
-
         Log.e("TouchEvent: DOWN ", "size:" + size);
-
         float rotateX = offsetY / size * 45;    //45 表示最大旋转度数
         float rotateY = -offsetX / size * 45;  //若是往同一个方向旋转不会有视图差效果
-
         Log.e("TouchEvent: DOWN ", "rotateX:" + rotateX + " rotateY:" + rotateY);
-
         camera.save();
         camera.rotateX(rotateX);  //
         camera.rotateY(rotateY);  //旋转
