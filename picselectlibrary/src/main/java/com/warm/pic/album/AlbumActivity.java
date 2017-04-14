@@ -116,7 +116,12 @@ public class AlbumActivity extends Activity implements ViewTreeObserver.OnGlobal
     @Override
     protected void onRestart() {
         super.onRestart();
+
+        //当内容导航栏重合时  需要设置内边距
 //        getWindow().getDecorView().findViewById(android.R.id.content).setPadding(0, 0, 0, getNavigationBarHeight());
+
+        //    <item name="android:windowBackground">@android:color/white</item>
+        //通过它改变底部导航栏背景色
     }
 
     private void initLister() {
