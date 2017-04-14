@@ -32,7 +32,11 @@
         </activity>
         <activity android:name=".album.AlbumActivity" />
 
-        <meta-data android:value="95ccf4e72b6d5f5fe7f6b319f7466eae" android:name="BUG_HD_SDK_GENERAL_KEY" />
+        <meta-data android:value="95ccf4e72b6d5f5fe7f6b319f7466eae" android:name="BUG_HD_SDK_GENERAL_KEY" /><!-- ATTENTION: This was auto-generated to add Google Play services to your project for
+     App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
     </application>
 
 </manifest>

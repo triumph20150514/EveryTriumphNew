@@ -20,16 +20,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 100);
 
         findViewById(R.id.tv).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                update();
-//                startActivity(new Intent(MainActivity.this, AlbumActivity.class));
+//                update();
+                startActivity(new Intent(MainActivity.this, AlbumActivity.class));
             }
         });
-
-//        requestPermissions(new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, 100);
 
     }
 
