@@ -80,6 +80,7 @@ public class FlodersAdapter extends RecyclerView.Adapter {
             @Override
             public void onClick(View v) {
 
+
             }
         });
 

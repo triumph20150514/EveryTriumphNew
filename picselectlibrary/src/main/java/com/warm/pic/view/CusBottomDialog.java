@@ -44,7 +44,6 @@ public class CusBottomDialog extends BottomSheetDialog {
         Log.e("Height:", "scrren" + scrren + " status:" + status+" naginbar:"+getNavigationBarHeight());
         int dialogOffset = scrren - status;
         getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, dialogOffset == 0 ? ViewGroup.LayoutParams.MATCH_PARENT : dialogOffset);
-        WindowManager.LayoutParams w = getWindow().getAttributes();
     }
 
     public void setParamters(){

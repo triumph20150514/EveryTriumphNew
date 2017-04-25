@@ -15,10 +15,9 @@
     <uses-permission android:name="android.permission.GET_TASKS"></uses-permission>
 
 
-
     <application
-        android:allowBackup="true"
         android:name=".base.App"
+        android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
@@ -32,7 +31,11 @@
         </activity>
         <activity android:name=".album.AlbumActivity" />
 
-        <meta-data android:value="95ccf4e72b6d5f5fe7f6b319f7466eae" android:name="BUG_HD_SDK_GENERAL_KEY" /><!-- ATTENTION: This was auto-generated to add Google Play services to your project for
+        <service android:name=".download.DownLoadService" />
+
+        <meta-data
+            android:name="BUG_HD_SDK_GENERAL_KEY"
+            android:value="95ccf4e72b6d5f5fe7f6b319f7466eae" /><!-- ATTENTION: This was auto-generated to add Google Play services to your project for
      App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
         <meta-data
             android:name="com.google.android.gms.version"
