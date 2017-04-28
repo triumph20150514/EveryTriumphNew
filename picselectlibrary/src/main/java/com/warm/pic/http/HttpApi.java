@@ -41,6 +41,15 @@ public class HttpApi {
 //        requestBuilder.method("GET", null);
         final Request request = requestBuilder.build();
         Call mcall = mOkHttpClient.newCall(request);
+
+
+        try {
+            mcall.execute();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
         mcall.enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
